@@ -1,3 +1,4 @@
+import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminAuthGuard } from './admin-auth-guard.service';
@@ -25,6 +26,11 @@ const routes: Routes = [
   { 
     path: 'admin/products', 
     component: AdminProductsComponent, 
+    canActivate:[AuthGuard, AdminAuthGuard] 
+  },
+  { 
+    path: 'admin/products/new', 
+    component: ProductFormComponent, 
     canActivate:[AuthGuard, AdminAuthGuard] 
   },
   { 
