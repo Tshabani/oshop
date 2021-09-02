@@ -10,10 +10,12 @@ export class AdminProductsComponent implements OnInit {
   product$: any;
 
   constructor(private productService: ProductService) {
-    this.product$ = this.productService.getAll();
    }
 
   ngOnInit(): void {
+    this.productService.getAll().subscribe((product) => {
+      this.product$ = product;
+    })
   }
 
 }

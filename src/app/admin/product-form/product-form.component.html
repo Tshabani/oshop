@@ -21,14 +21,11 @@
             </div>
             <div class="form-group">
                 <label for="category">Category</label>
-                <select id="category"class="form-select">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                    <!-- <option *ngFor="let c of categories$ | async" [value]="c.$key">
+                <select ngModel name="category" id="category"class="form-select">
+                    <option value=""></option>
+                    <option *ngFor="let c of categories$" [value]="c.$key">
                         {{c.name}}
-                    </option> -->
+                    </option>
                 </select>
             </div>
             <div class="form-group">
@@ -46,7 +43,7 @@
             <img [src]="imageUrl.value" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">{{title.value}}</h5>
-              <p class="card-text">{{price.value | currency: 'ZAR':true}}</p>
+              <p class="card-text">{{price.value | currency: 'ZAR'}}</p>
             </div>
           </div>
     </div>

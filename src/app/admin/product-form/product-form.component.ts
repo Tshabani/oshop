@@ -16,10 +16,14 @@ export class ProductFormComponent implements OnInit {
     private categoryService: CategoryService, 
     private productService: ProductService,
     private router: Router) { 
-    this.categories$ = categoryService.getCategories();   
+     
+
   }
 
   ngOnInit(): void {
+    this.categoryService.getCategories().subscribe((categories) => {
+      this.categories$ = categories;
+    })   
   }
 
   save(product: NgForm){
