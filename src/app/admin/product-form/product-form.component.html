@@ -23,7 +23,7 @@
                 <label for="category">Category</label>
                 <select ngModel name="category" id="category"class="form-select">
                     <option value=""></option>
-                    <option *ngFor="let c of categories$" [value]="c.$key">
+                    <option *ngFor="let c of categories$"  [ngValue]="c.$key">
                         {{c.name}}
                     </option>
                 </select>
