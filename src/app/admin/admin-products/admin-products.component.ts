@@ -13,7 +13,7 @@ export class AdminProductsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.productService.getAll().subscribe((product) => {
+    this.productService.getAll().subscribe((product: any) => {
       this.product$ = product;
     })
   }
